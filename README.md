@@ -1,12 +1,9 @@
 > jd抢购新思路，基于浏览器模拟点击
 
 
-App数据抓包必需工具
-必需工具：小米手机，Charles，HttpCanary
 
-从2023年2月后，京东只限于从app发起抢购，所以，网上的很多工具已经无效了。只能分析app端的底层协议和流程。
 
-通过抓包可以发现，整个抢购流程分为七个步骤，如下：
+通过jd-apk-10.50抓包可以发现，整个抢购流程分为七个步骤，如下：
 
 1. 第一步是genToken ，这一步需要sign签名，charles抓包下来的sign签名是可以重复利用的，请求后获得Token与下一步需要跳转的url：
 ```
@@ -108,13 +105,17 @@ https://marathon.jd.com/seckillnew/orderService/
 https://marathon.jd.com/seckillnew/orderService/submitOrder.action?skuId=100012043978
 ```
 
+#### 新思路（pypp）
+
+因此，获取第一步的tokenKey和url后，即可使用pypp浏览器模拟各种302跳转。当跳转到订单页后，监听提交按钮，使用pypp的点击事件，即可实现订单提交。
+
 
 提交后返回：
 ```
 {"errorMessage":"很遗憾没有抢到，再接再厉哦。","orderId":0,"resultCode":90016,"skuId":0,"success":false}
 ```
 
-至此分析流程结束。
+程序可参考 pyppBrowser.py
 
 祝各位都能够抢到自己心仪的商品，技术交流可联系wx：lengqin1024
 
