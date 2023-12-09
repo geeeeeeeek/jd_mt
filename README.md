@@ -115,7 +115,7 @@ https://marathon.jd.com/seckillnew/orderService/submitOrder.action?skuId=1000120
 {"errorMessage":"很遗憾没有抢到，再接再厉哦。","orderId":0,"resultCode":90016,"skuId":0,"success":false}
 ```
 
-程序可参考 pyppBrowser.py
+程序可参考 [pyppBrowser.py](https://github.com/geeeeeeeek/jd_mt/blob/main/pyppBrowser.py)
 
 祝各位都能够抢到自己心仪的商品，技术交流可联系wx：lengqin1024
 
