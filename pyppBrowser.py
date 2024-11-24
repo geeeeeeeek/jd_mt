@@ -60,7 +60,7 @@ class PyppBrowser:
             await self.page.waitForSelector(selector=selector, options={'timeout': 3000})
             await self.page.click(selector=selector, options={'clickCount': 1})
             await self.page.screenshot(
-                {'path': self.base_path + os.sep + str(int(time.time() * 1000)) + '.jpg', 'quality': 90,
+                {'path': self.base_path + os.sep + str(int(time.time() * 1000)) + '.jpg', 'quality': 80,
                  'fullPage': True})  # 截图保存路径
         except Exception as e:
             print(str(e))
